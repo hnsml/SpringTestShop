@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Shops</title>
+</head>
+<body>
+<h1>Shops</h1>
+<form method="get" th:action="@{/shop/search}">
+  <input name="query" placeholder="Search..." type="text">
+  <button type="submit">Search</button>
+</form>
+<a th:href="@{/shop/add}">Add Shop</a>
+<ul>
+  <li th:each="shop : ${shops}">
+    <a th:href="@{/shop/{id}(id=${shop.id})}" th:text="${shop.name}">Shop Name</a> -
+    <span th:text="${shop.category}">Category</span> -
+    <span th:text="${shop.address}">Address</span>
+    <form method="post" style="display:inline;" th:action="@{/shop/delete/{id}(id=${shop.id})}">
+      <button type="submit">Delete</button>
+    </form>
+    <a th:href="@{/shop/edit/{id}(id=${shop.id})}">Edit</a>
+  </li>
+</ul>
+</body>
+</html>

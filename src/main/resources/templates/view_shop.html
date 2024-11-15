@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Shop Details</title>
+</head>
+<body>
+<h1 th:text="${shop.name}">Shop Name</h1>
+<p><strong>Address:</strong> <span th:text="${shop.address}">Address</span></p>
+<p><strong>Phone:</strong> <span th:text="${shop.phone}">Phone</span></p>
+<p><strong>Email:</strong> <span th:text="${shop.email}">Email</span></p>
+<p><strong>Website:</strong> <a th:href="${shop.website}" th:text="${shop.website}">Website</a></p>
+<p><strong>Category:</strong> <span th:text="${shop.category}">Category</span></p>
+<p><strong>Description:</strong> <span th:text="${shop.description}">Description</span></p>
+<a th:href="@{/}">Back to list</a>
+</body>
+</html>
